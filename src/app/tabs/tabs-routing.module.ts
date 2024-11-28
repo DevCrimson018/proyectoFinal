@@ -4,31 +4,40 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: '',
+        redirectTo: 'horarios',
+        pathMatch: 'full'
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'horarios',
+        loadChildren: () => import('./horarios/horarios.module').then(m => m.HorariosPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'noticias',
+        loadChildren: () => import('./noticias/noticias.module').then(m => m.NoticiasPageModule)
+      },
+      {
+        path: 'mis-tareas',
+        loadChildren: () => import('./mis-tareas/mis-tareas.module').then(m => m.MisTareasPageModule)
+      },
+      {
+        path: 'menu',
+        loadChildren: () => import('./menu/menu.module').then(m => m.MenuPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'horarios',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/horarios',
     pathMatch: 'full'
   }
 ];
