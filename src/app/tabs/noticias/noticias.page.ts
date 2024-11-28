@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-noticias',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticiasPage implements OnInit {
 
-  constructor() { }
+  noticias: any[] = []
 
-  ngOnInit() {
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  async ngOnInit() {
+    this.apiService.noticias().then(res => {
+      this.noticias = res.data
+    })
   }
 
 }

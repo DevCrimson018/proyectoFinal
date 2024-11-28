@@ -3,15 +3,78 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Solicitudes</ion-title>
+    
+
+  <!-- Aqui se elige entre ver o agregar solicitudes -->
+   
+  <ion-segment [value]="verMisSolicitudes" (ionChange)="cambiarVista($event)">
+    <ion-segment-button  value="true">
+      <ion-label>Mis Solicitudes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="false">
+      <ion-label>Solicitar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Solicitudes</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
+
+
+
+
+  @if(verMisSolicitudes == true) {
+
+    @if(solicitudes.length > 0){
+      <!-- Listado de solicitudes hechas -->
+      <ion-row class="ion-justify-content-around">
+        <ion-col size="3" *ngFor="let solicitud of solicitudes">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>{{solicitud.tipo}}</ion-card-title>
+              <ion-card-subtitle>{{solicitud.fechaSolicitud}} || {{solicitud.estado}}</ion-card-subtitle>
+            </ion-card-header>
+          
+            <ion-card-content>
+              {{solicitud.descripcion}}
+            </ion-card-content>
+          
+            <ion-button (click)="cancelarSolicitud(solicitud.id)" expand="block"  shape="round">
+              Eliminar <ion-icon slot="end" name="trash-outline" color="danger"></ion-icon>
+            </ion-button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    }@else {
+      <!-- Aqui se muestra cuando no hay registro de solicitudes -->
+      <h1>No hay Registros</h1>
+    }
+
+  }@else {
+
+    <!-- Este es el mini-formulario para crear solicitudes -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+
+          <ion-item>
+            <ion-select [(ngModel)]="tipoSolicitud" label="Tipo" placeholder="Tipo de Solicitud">
+              <ion-select-option *ngFor="let tipo of tiposSolicitudes" [value]="tipo.codigo">{{tipo.codigo}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Descripcion: " [(ngModel)]="descripcionSolicitud"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-button (click)="crearSolicitud()" expand="block" shape="round">
+              Crear Solicitud
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  }
 </ion-content>

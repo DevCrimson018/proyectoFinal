@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-eventos',
@@ -7,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent  implements OnInit {
 
-  constructor() { }
+  eventos: any[] = [] 
 
-  ngOnInit() {}
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  ngOnInit() {
+    this.obtenerEventos()
+  }
+
+  obtenerEventos() {
+    this.apiService.eventos().then(res => {
+      this.eventos = res
+    })
+  }
 
 }

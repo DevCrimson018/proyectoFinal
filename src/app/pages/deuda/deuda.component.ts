@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-deuda',
@@ -7,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeudaComponent  implements OnInit {
 
-  constructor() { }
+  deudas: any[] = []
 
-  ngOnInit() {}
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  ngOnInit() {
+    this.obtenerDeudas()
+  }
+
+  obtenerDeudas() {
+    this.apiService.deudas().then(res => {
+      this.deudas = res
+    })
+  }
 
 }

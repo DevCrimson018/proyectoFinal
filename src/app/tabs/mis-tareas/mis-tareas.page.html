@@ -10,4 +10,27 @@
       <ion-title size="large">mis_tareas</ion-title>
     </ion-toolbar>
   </ion-header>
+
+<!-- Aqui van las tareas, esto es solo un ejemplo de como se podrian hacer -->
+@if(tareas.length > 0 ) {
+  <ion-row class="ion-justify-content-between" >
+    <ion-col size="3" *ngFor="let tarea of tareas">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{tarea.titulo}}</ion-card-title>
+          <ion-card-subtitle>Fecha de Vencimiento: {{tarea.fechaVencimiento}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{tarea.descripcion}}
+        </ion-card-content>
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+}@else {
+  <!-- Aqui puedes poner una vista para cuando no hayan registros de horarios guardados -->
+  <h1>No hay tareas Disponibles</h1>
+}
+
 </ion-content>

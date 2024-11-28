@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent  implements OnInit {
 
-  constructor() { }
+  username: string = ""
+  password: string = ""
 
-  ngOnInit() {}
+  constructor(
+    private apiService: ApiServiceService,
+    private router: Router
+  ) { }
+
+  async ngOnInit() {
+    await this.apiService.test()
+  }
+
+  async logIn() {
+    try {
+      this.apiService.login(this.username, this.password).then(res => {
+        console.log(res);
+        localStorage.setItem("user_token", res.authToken)
+        alert("Todo bn")
+        this.router.navigate(['tabs'])
+      })
+    } catch (error) {
+      alert(error)
+    }
+  }
 
 }

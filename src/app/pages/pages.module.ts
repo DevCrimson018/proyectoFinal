@@ -11,6 +11,7 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { DeudaComponent } from './deuda/deuda.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { PreseleccionComponent } from './preseleccion/preseleccion.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PreseleccionComponent } from './preseleccion/preseleccion.component';
     CommonModule,
     PagesRoutingModule,
     RouterModule,
-    IonicModule
+    IonicModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

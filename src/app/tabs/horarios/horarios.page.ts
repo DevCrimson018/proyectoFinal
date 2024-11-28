@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-horarios',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HorariosPage implements OnInit {
 
-  constructor() { }
+  horarios: any[] = [] 
 
-  ngOnInit() {
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  async ngOnInit() {
+    try {
+      await this.apiService.horarios().then(res => {
+        this.horarios = res
+      })
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-solicitudes',
@@ -7,8 +8,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudesComponent  implements OnInit {
 
-  constructor() { }
+  verMisSolicitudes:boolean = true
+  tiposSolicitudes: any[] = []
 
-  ngOnInit() {}
+  solicitudes: any[] = []
+
+  tipoSolicitud: string = ""
+  descripcionSolicitud: string = ""
+
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  async ngOnInit() {
+    try {
+      await this.misSolicitudes()
+      await this.obtenerTiposSolicitudes
+    } catch (error) {
+      console.log(error);
+      
+    }
+
+  }
+
+  async misSolicitudes() {
+    this.apiService.misSolicitudes().then(res => {
+      this.solicitudes = res.data
+    })
+  }
+
+  obtenerTiposSolicitudes() {
+    this.apiService.tiposSolicitudes().then(res => {
+      this.tiposSolicitudes = res.data
+    })
+  }
+
+  async crearSolicitud() {
+    await this.apiService.crearSolicitud(this.tipoSolicitud, this.descripcionSolicitud).then(() => {
+      this.misSolicitudes()
+    })
+  }
+
+  async cancelarSolicitud(id: number) {
+    await this.apiService.cancelarSolicitud(id).then(() => {
+      this.misSolicitudes()
+    })
+  }
+
+
+  cambiarVista($event: any) {
+    console.log($event.detail.value);
+    this.verMisSolicitudes = $event.detail.value === 'true';
+    console.log(this.verMisSolicitudes);
+    
+  }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-mis-tareas',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisTareasPage implements OnInit {
 
-  constructor() { }
+  tareas: any[] = []
 
-  ngOnInit() {
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  async ngOnInit() {
+    this.apiService.tareas().then(res => {
+      this.tareas = res.data
+    })
   }
+
 
 }

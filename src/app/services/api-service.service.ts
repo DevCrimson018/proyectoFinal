@@ -7,12 +7,17 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ApiServiceService {
 
-  api: string = "https://uasdapi.ia3x.com/"
+  api: string = "https://uasdapi.ia3x.com"
 
   constructor(
     private http: HttpClient
   ) { }
 
+  test() {
+    return firstValueFrom(
+      this.http.get<any>(`${this.api}/`)
+    )
+  }
 
   login(username: string, password: string) {
     return firstValueFrom(

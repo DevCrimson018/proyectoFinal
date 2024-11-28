@@ -10,4 +10,27 @@
       <ion-title size="large">noticias</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Aqui van las noticias, esto es solo un ejemplo de como se podrian hacer -->
+  @if(noticias.length > 0) {
+    <ion-row class="ion-justify-content-between" >
+      <ion-col size="3" *ngFor="let noticia of noticias">
+        <ion-card>
+          <img alt="Noticia" [src]="noticia.img" />
+          <ion-card-header>
+            <ion-card-title>{{noticia.title}}</ion-card-title>
+            <ion-card-subtitle>{{noticia.date}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-button expand="block" shape="round" >
+            <a style="text-decoration: none;" [href]="noticia.url"></a>
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  }@else {
+    <!-- Aqui puedes poner una vista para cuando no hayan registros de horarios guardados -->
+    <h1>No hay Noticias Disponibles</h1>
+  }
+
 </ion-content>

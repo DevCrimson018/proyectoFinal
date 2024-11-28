@@ -3,5 +3,11 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxy": {
+    "/api": {
+      "target": "https://uasdapi.ia3x.com",
+      "secure": false
+    }
+  }
 }

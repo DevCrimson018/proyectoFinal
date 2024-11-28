@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/services/api-service.service';
 
 @Component({
   selector: 'app-videos',
@@ -7,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideosComponent  implements OnInit {
 
-  constructor() { }
+  videos: any[] = []
 
-  ngOnInit() {}
+  constructor(
+    private apiService: ApiServiceService
+  ) { }
+
+  async ngOnInit() {
+    this.apiService.videos().then(res => {
+      this.videos = res
+    })
+  }
+
+
 
 }

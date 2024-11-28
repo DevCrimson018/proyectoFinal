@@ -10,4 +10,19 @@
       <ion-title size="large">horarios</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-content>
+    @if (horarios.length > 0) {
+      <!-- Aqui se pone la lista de horarios. Que por cierto es un registro que esta vacio en la API, por lo que puedes enfocarte mas en la vista de cuando esta vacio -->
+      <ion-list>
+        <ion-item *ngFor="let horario of horarios">
+          <ion-label>{{horario.titulo}}</ion-label>
+        </ion-item>
+      </ion-list>
+    }@else {
+      <!-- Aqui puedes poner una vista para cuando no hayan registros de horarios guardados -->
+      <h1>No hay Horarios Disponibles</h1>
+    }
+
+  </ion-content>
 </ion-content>
