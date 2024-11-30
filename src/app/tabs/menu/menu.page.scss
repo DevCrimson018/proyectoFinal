@@ -1,0 +1,65 @@
+.menu-header {
+    --background: transparent !important; /* Elimina el fondo predeterminado */
+    --ion-background-color: transparent;
+  }
+
+  ion-header{
+    border: 1px solid #041865;
+    box-shadow: none;
+    margin-top: 10%;
+  }
+
+  ion-toolbar {
+    --background: transparent !important; /* Hace transparente el fondo del toolbar */
+    --ion-background-color: transparent; /* Asegura la transparencia */
+  }
+  
+  .menu-title {
+    color: #fff; /* Texto blanco */
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent !important;
+    
+  }
+  
+  .menu-content {
+    --background: #041865; /* Fondo azul institucional */
+    padding: 20px;
+  
+    ion-list {
+      background: transparent; /* Fondo blanco para la lista */
+      border-radius: 50px; /* Bordes redondeados */
+      padding: 30px;
+      margin-top: 20%;
+  
+      ion-item {
+        color: #041865;
+        --background: #fff !important; 
+        font-size: 1.1em;
+        margin: 15px 0;
+        border-radius: 5px; /* Bordes redondeados */
+        --background-hover: #e5f0ff; /* Fondo azul claro al hacer clic */
+  
+        ion-label {
+          font-weight: bold; /* Negrita para los títulos */
+        }
+  
+        ion-icon {
+          color: #041865; /* Azul institucional para los íconos */
+          font-size: 1.2em;
+        }
+      }
+  
+      ion-item:last-child {
+        background-color: #fff5f5; /* Fondo rojo claro para "Salir" */
+        ion-label {
+          color: #ff4d4d; /* Texto rojo para "Salir" */
+        }
+  
+        ion-icon {
+          color: #ff4d4d; /* Ícono rojo para "Salir" */
+        }
+      }
+    }
+  }  
