@@ -1,3 +1,37 @@
-<ion-button routerLink="/onboarding/login" shape="round">
-login
-</ion-button>
+<ion-content class="landing-page">
+    <!-- Overlay negro -->
+    <div class="overlay"></div>
+  
+    <!-- Encabezado con el logo de la UASD -->
+    <div class="header">
+      <img src="../../../assets/logo_uasd.png" alt="Logo de la UASD" class="uasd-logo" />
+      <h1 class="title">UASD</h1>
+    </div>
+  
+    <!-- Sección de información -->
+    <div class="info-section">
+      <h2>Misión</h2>
+      <p>
+        Formar críticamente profesionales, investigadores y técnicos en las ciencias, las humanidades y las artes necesarias y eficientes para coadyuvar a las transformaciones que demanda el desarrollo nacional sostenible.
+      </p>
+      <h2>Visión</h2>
+      <p>
+        Ser una institución de excelencia y liderazgo académico.
+      </p>
+      <h2>Valores</h2>
+      <ul>
+        <li>Solidaridad</li>
+        <li>Transparencia</li>
+        <li>Verdad</li>
+        <li>Igualdad</li>
+      </ul>
+    </div>
+  
+    <!-- Botón de login -->
+    <div class="button-container">
+      <ion-button routerLink="/onboarding/login" shape="round" expand="block" class="login-button">
+        Ingresar
+      </ion-button>
+    </div>
+  </ion-content>
+  
