@@ -12,9 +12,32 @@ export class PreseleccionComponent  implements OnInit {
 
   verMiPreseleccion:boolean = true
 
-  materiasDisponibles: any[] = []
+  materiasDisponibles: any[] = [
+    {
+      "codigo": "DEP003456",
+      "nombre": "Esgrima 3",
+      "horario": "Lunes 7 am",
+      "aula": "Olim 1",
+      "ubicacion": "18.47826317813275, -69.91659134942564"
+    },
+    {
+      "codigo": "INF900001",
+      "nombre": "Desarrollo De Apps Faciles",
+      "horario": "Domingos 4 pm",
+      "aula": "Virtual",
+      "ubicacion": "18.508787558433312, -69.87762421701359"
+    }
+  ]
 
-  preselecciones: any[] = []
+  preselecciones: any[] = [
+    {
+      "codigo": "DEP003456",
+      "nombre": "Esgrima 3",
+      "aula": "Olim 1",
+      "ubicacion": "18.47826317813275, -69.91659134942564",
+      "confirmada": false
+    }
+  ]
 
   constructor(
     private apiService: ApiServiceService

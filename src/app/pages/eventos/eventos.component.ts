@@ -8,7 +8,16 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class EventosComponent  implements OnInit {
 
-  eventos: any[] = [] 
+  eventos: any[] = [
+    {
+      "id": 1,
+      "titulo": "Cumple anios del profesor",
+      "descripcion": "El profesor Amadis Cumple anios",
+      "fechaEvento": "2025-05-24T20:02:39",
+      "lugar": "ITLA",
+      "coordenadas": "18.477011029492324, -69.8365311114267"
+    }
+  ]
 
   constructor(
     private apiService: ApiServiceService

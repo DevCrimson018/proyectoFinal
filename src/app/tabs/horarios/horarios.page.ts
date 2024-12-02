@@ -8,21 +8,23 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class HorariosPage implements OnInit {
 
-  horarios: any[] = [] 
+  horarios: any[] = [
+    
+  ] 
 
   constructor(
     private apiService: ApiServiceService
   ) { }
 
   async ngOnInit() {
-    try {
-      await this.apiService.horarios().then(res => {
-        this.horarios = res
-      })
-    } catch (error) {
-      console.log(error);
+    // try {
+    //   await this.apiService.horarios().then(res => {
+    //     this.horarios = res
+    //   })
+    // } catch (error) {
+    //   console.log(error);
       
-    }
+    // }
   }
 
 }
