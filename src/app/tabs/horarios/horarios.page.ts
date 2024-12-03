@@ -17,14 +17,14 @@ export class HorariosPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    // try {
-    //   await this.apiService.horarios().then(res => {
-    //     this.horarios = res
-    //   })
-    // } catch (error) {
-    //   console.log(error);
+    try {
+      await this.apiService.horarios().then(res => {
+        this.horarios = res
+      })
+    } catch (error) {
+      console.log(error);
       
-    // }
+    }
   }
 
 }

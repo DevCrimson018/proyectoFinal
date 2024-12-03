@@ -25,7 +25,7 @@ export class LoginComponent  implements OnInit {
     try {
       this.apiService.login(this.username, this.password).then(res => {
         console.log(res);
-        localStorage.setItem("user_token", res.authToken)
+        localStorage.setItem("user_token", res.data.authToken)
         alert("Todo bn")
         this.router.navigate(['tabs'])
       })

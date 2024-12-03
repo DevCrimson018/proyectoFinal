@@ -9,33 +9,9 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 export class SolicitudesComponent  implements OnInit {
 
   verMisSolicitudes:boolean = true
-  tiposSolicitudes: any[] = [
-    {
-      "codigo": "beca",
-      "descripcion": "Solicitud de beca"
-    },
-    {
-      "codigo": "carta_estudio",
-      "descripcion": "Carta de estudios"
-    },
-    {
-      "codigo": "record_nota",
-      "descripcion": "Record de nota"
-    }
-  ]
+  tiposSolicitudes: any[] = []
 
-  solicitudes: any[] = [
-    {
-      "id": 7,
-      "usuarioId": 137,
-      "tipo": "beca",
-      "descripcion": "no se",
-      "estado": "Pendiente",
-      "fechaSolicitud": "2024-11-28T01:35:24.023914",
-      "fechaRespuesta": null,
-      "respuesta": null
-    }
-  ]
+  solicitudes: any[] = []
 
   tipoSolicitud: string = ""
   descripcionSolicitud: string = ""

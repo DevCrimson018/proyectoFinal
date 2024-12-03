@@ -12,5 +12,5 @@ export const interceptorInterceptor: HttpInterceptorFn = (req, next) => {
     })
   }
 
-  return next(req);
+  return next(clonedReq);
 };

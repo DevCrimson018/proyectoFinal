@@ -8,15 +8,7 @@ import { ApiServiceService } from 'src/app/services/api-service.service';
 })
 export class DeudaComponent  implements OnInit {
 
-  deudas: any[] = [
-    {
-      "id": 1,
-      "usuarioId": 1,
-      "monto": 1500,
-      "pagada": false,
-      "fechaActualizacion": "2024-11-13T16:58:35"
-    }
-  ]
+  deudas: any[] = []
 
   constructor(
     private apiService: ApiServiceService
