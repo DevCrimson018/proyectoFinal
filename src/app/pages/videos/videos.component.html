@@ -22,8 +22,10 @@
           <ion-card-subtitle>{{video.fechaPublicacion}}</ion-card-subtitle>
         </ion-card-header>
       
-        <ion-button expand="block" shape="round" >
-          <a style="text-decoration: none; color: white;" [href]="'https://www.youtube.com/watch?v=' + video.url">Ver Video</a>
+        <ion-button expand="block" shape="round" ><ion-icon name="play-outline"></ion-icon>
+          <a style="text-decoration: none; color: white;" [href]="'https://www.youtube.com/watch?v=' + video.url">
+            Reproducir
+          </a>
         </ion-button>
       </ion-card>
     </ion-col>
