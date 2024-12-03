@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Mis materias</ion-title>
+    <ion-title>Mis horarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +11,12 @@
       <ion-list>
         <ion-item *ngFor="let horario of horarios">
           <ion-label>
-            <h2>Aula: {{horario.aula}}</h2>
-            <p>Materia: {{horario.materia}}</p>
+            <h2><b>Aula:</b> {{horario.aula}}</h2>
+            <p><b>{{horario.materia}}</b></p>
           </ion-label>
-          <ion-label>{{horario.fechaHora | date: "dd-MMM-YYYY HH:MM a"}}</ion-label>
+          <ion-label>
+            {{horario.fechaHora | date: "dd-MMM-YYYY HH:MM a"}}
+          </ion-label>
         </ion-item>
       </ion-list>
     }@else {

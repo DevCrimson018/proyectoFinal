@@ -7,7 +7,6 @@ ion-header {
   --ion-background-color: #fff; 
   padding: 0;
   margin: 0;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 }
   
     ion-toolbar {
@@ -28,6 +27,10 @@ ion-header {
       text-align: center;
       margin: 0;
     }
+
+    ion-icon{
+      margin-right: 8px;
+    }
   
   
   ion-content {
@@ -43,12 +46,19 @@ ion-header {
     }
   
     ion-row {
-      margin-top: 10%;
+      margin-top: 20%;
+      display: flex;
+      flex-direction: column; 
+      gap: 0;
+      place-items: center;
   
       ion-col {
         display: flex;
         justify-content: center;
-  
+        gap: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+
         ion-card {
           background: #f4f4f4;
           border: 1px solid #041865; 
@@ -57,7 +67,10 @@ ion-header {
           flex-direction: column;
           transition: transform 0.2s ease-in-out;
           justify-content: space-between;
-          height: 450px;
+          height: 350px;
+          width: 400px;
+          margin-bottom: 8px !important;
+          padding: 0 !important;
   
           &:hover {
             transform: scale(1.02); 
@@ -72,6 +85,7 @@ ion-header {
           }
   
           ion-card-header {
+            padding-bottom: 10px;
             ion-card-title {
               font-size: 1.2em;
               color: #041865; 
@@ -84,15 +98,23 @@ ion-header {
               margin-bottom: 8px;
             }
           }
+
+          ion-icon {
+            font-size: 24px;
+            color: #fff;
+          }
   
           ion-button {
             --background: #041865; 
             --color: #fff; 
             border-radius: 10px; 
-            font-size: 0.8em; 
+            font-size: 1em; 
             padding: 5px 10px;
-            height: auto;
-            margin: 20px 5px;
+            margin: 0 auto; 
+            height: 55px;
+            width: fit-content;
+            text-align: center;
+            margin-bottom: 15px;
             a {
               color: #fff; 
               text-decoration: none;

@@ -15,10 +15,16 @@ export class MisTareasPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.apiService.tareas().then(res => {
-      this.tareas = res.data
-    })
+    try {
+      await this.apiService.tareas().then(res => {
+        this.tareas = res
+        console.log(res);
+        
+      })
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
-
 
 }
