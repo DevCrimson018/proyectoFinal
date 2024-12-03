@@ -10,7 +10,11 @@
     @if (horarios.length > 0) {
       <ion-list>
         <ion-item *ngFor="let horario of horarios">
-          <ion-label>{{horario.titulo}}</ion-label>
+          <ion-label>
+            <h2>Aula: {{horario.aula}}</h2>
+            <p>Materia: {{horario.materia}}</p>
+          </ion-label>
+          <ion-label>{{horario.fechaHora | date: "dd-MMM-YYYY HH:MM a"}}</ion-label>
         </ion-item>
       </ion-list>
     }@else {

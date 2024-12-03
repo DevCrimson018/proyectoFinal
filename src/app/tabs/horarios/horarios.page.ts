@@ -20,6 +20,8 @@ export class HorariosPage implements OnInit {
     try {
       await this.apiService.horarios().then(res => {
         this.horarios = res
+        console.log(res);
+        
       })
     } catch (error) {
       console.log(error);
