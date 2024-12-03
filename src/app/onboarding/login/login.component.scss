@@ -1,21 +1,21 @@
 .login-page {
     --background: #041865; 
     display: flex;
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    height: 100vh; /* Altura completa de la ventana */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
     padding: 0;
     margin: 0;
   
     .header {
-      --background: transparent; /* Fondo transparente para el encabezado */
+      --background: transparent; 
       text-align: center;
     }
 
     .toolbar {
         display: flex;
-        justify-content: center; /* Centra horizontalmente */
-        --background: transparent; /* Elimina cualquier fondo predeterminado */
+        justify-content: center; 
+        --background: transparent;
     }
   
     .header-title {
@@ -35,9 +35,9 @@
       height: auto;
       padding: 20px;
       margin: 30% 10%;
-      background: #fff; /* Fondo blanco para el formulario */
-      border-radius: 10px; /* Bordes redondeados */
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+      background: #fff; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
     }
   
     .login-form {

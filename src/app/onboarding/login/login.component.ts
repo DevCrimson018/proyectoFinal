@@ -27,7 +27,7 @@ export class LoginComponent  implements OnInit {
         console.log(res);
         localStorage.setItem("user_token", res.data.authToken)
         alert("Todo bn")
-        this.router.navigate(['tabs'])
+        this.router.navigate(['tabs/menu'])
       })
     } catch (error) {
       alert(error)

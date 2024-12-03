@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>Noticias</ion-title>
   </ion-toolbar>
@@ -6,10 +6,9 @@
 
 <ion-content [fullscreen]="true">
 
-  <!-- Aquí van las noticias -->
   @if(noticias.length > 0) {
     <ion-row class="ion-justify-content-between">
-      <ion-col size="3" *ngFor="let noticia of noticias">
+      <ion-col size="6" *ngFor="let noticia of noticias">
         <ion-card>
           <img alt="Noticia" [src]="noticia.img" />
           <ion-card-header>
@@ -18,7 +17,7 @@
           </ion-card-header>
         
           <ion-button expand="block" shape="round">
-            <a style="text-decoration: none;" [href]="noticia.url"></a>
+            <a style="text-decoration: none;" [href]="noticia.url">Ver más</a>
           </ion-button>
         </ion-card>
       </ion-col>

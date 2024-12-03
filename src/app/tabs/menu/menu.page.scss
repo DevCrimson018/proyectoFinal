@@ -1,5 +1,5 @@
 .menu-header {
-    --background: transparent !important; /* Elimina el fondo predeterminado */
+    --background: transparent !important;
     --ion-background-color: transparent;
   }
 
@@ -7,16 +7,30 @@
     border: 1px solid #041865;
     box-shadow: none;
     margin-top: 10%;
+    top: 0; 
+    position: fixed; 
+    z-index: 100; 
+    width: 100%; 
+    --background: #fff; 
+    --ion-background-color: #fff; 
+    padding: 0;
+    margin: 0;
   }
 
   ion-toolbar {
-    --background: transparent !important; /* Hace transparente el fondo del toolbar */
-    --ion-background-color: transparent; /* Asegura la transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --background: #041865 !important;
+    --ion-border-color: transparent;
+    border: none !important;
+    height: 50px;
+    box-shadow: none !important;
   }
   
   .menu-title {
-    color: #fff; /* Texto blanco */
-    font-size: 1.5em;
+    color: #fff;
+    font-size: 1.8em;
     font-weight: bold;
     text-align: center;
     background-color: transparent !important;
@@ -24,12 +38,12 @@
   }
   
   .menu-content {
-    --background: #041865; /* Fondo azul institucional */
+    --background: #041865; 
     padding: 20px;
   
     ion-list {
-      background: transparent; /* Fondo blanco para la lista */
-      border-radius: 50px; /* Bordes redondeados */
+      background: transparent; 
+      border-radius: 50px; 
       padding: 30px;
       margin-top: 20%;
   
@@ -38,27 +52,27 @@
         --background: #fff !important; 
         font-size: 1.1em;
         margin: 15px 0;
-        border-radius: 5px; /* Bordes redondeados */
-        --background-hover: #e5f0ff; /* Fondo azul claro al hacer clic */
+        border-radius: 5px; 
+        --background-hover: #e5f0ff; 
   
         ion-label {
-          font-weight: bold; /* Negrita para los títulos */
+          font-weight: bold; 
         }
   
         ion-icon {
-          color: #041865; /* Azul institucional para los íconos */
+          color: #041865; 
           font-size: 1.2em;
         }
       }
   
       ion-item:last-child {
-        background-color: #fff5f5; /* Fondo rojo claro para "Salir" */
+        background-color: #fff5f5; 
         ion-label {
-          color: #ff4d4d; /* Texto rojo para "Salir" */
+          color: #ff4d4d; 
         }
   
         ion-icon {
-          color: #ff4d4d; /* Ícono rojo para "Salir" */
+          color: #ff4d4d; 
         }
       }
     }

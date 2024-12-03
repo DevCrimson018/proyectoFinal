@@ -1,14 +1,11 @@
 <ion-content [fullscreen]="true" class="login-page">
-  <!-- Encabezado -->
   <ion-header collapse="condense" class="header">
     <ion-toolbar class="toolbar">
       <ion-title size="large" class="header-title">Bienvenido(a)</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <!-- Contenedor principal -->
   <div class="login-container">
-    <!-- Formulario de inicio de sesión -->
     <div class="login-form">
       <ion-item lines="none">
         <ion-label position="floating">Correo <ion-text color="danger">*</ion-text></ion-label>
@@ -20,7 +17,6 @@
         <ion-input required [(ngModel)]="password" type="password"></ion-input>
       </ion-item>
 
-      <!-- Botón de Login -->
       <div class="button-container">
         <ion-button expand="block" class="landing-button" (click)="logIn()">
           <ion-icon name="log-in-outline"></ion-icon>
@@ -28,7 +24,6 @@
         </ion-button>
       </div>
 
-      <!-- Enlace "Estudia con Nosotros" -->
       <div class="link-container">
         <a href="https://www.uasd.edu.do/" target="_blank" class="study-link">
           <ion-icon name="book-outline"></ion-icon>

@@ -1,17 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>mis_tareas</ion-title>
+    <ion-title>Mis tareas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">mis_tareas</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-<!-- Aqui van las tareas, esto es solo un ejemplo de como se podrian hacer -->
 @if(tareas.length > 0 ) {
   <ion-row class="ion-justify-content-between" >
     <ion-col size="3" *ngFor="let tarea of tareas">
@@ -29,8 +23,7 @@
     </ion-col>
   </ion-row>
 }@else {
-  <!-- Aqui puedes poner una vista para cuando no hayan registros de horarios guardados -->
-  <h1>No hay tareas Disponibles</h1>
+  <h3 class="no-tareas">No hay tareas disponibles.</h3>
 }
 
 </ion-content>
