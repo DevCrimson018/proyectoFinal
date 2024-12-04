@@ -4,7 +4,7 @@
     color: #fff;
     text-align: center;
     padding: 20px;
-    min-height: 100vh; /* Ocupa toda la pantalla */
+    min-height: 100vh; 
   
     /* Overlay negro */
     .overlay {
@@ -13,11 +13,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* Negro semitransparente */
-      z-index: 0; /* Debajo del contenido */
+      background: rgba(0, 0, 0, 0.6); 
+      z-index: 0; 
     }
   
-    /* Todo el contenido encima del overlay */
     .header,
     .info-section,
     .button-container {
@@ -74,14 +73,20 @@
         padding: 10px;
       }
       
-      .login-button {
-        --background: #fff; 
-        --color: #041865; 
-        font-size: 1.2em;
-        width: 100%; 
-        max-width: 300px;
-        border-radius: 50px; 
-        text-transform: uppercase;
+      ion-button {
+        --background: #fff;
+        --color: #041865;
+        border-radius: 10px;
+        font-size: 1em;
+        padding: 5px 15px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: fit-content;
+        height: 60px;
+        margin-bottom: 15px;
       }
   }
   

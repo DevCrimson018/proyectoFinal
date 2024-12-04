@@ -23,7 +23,7 @@ export class SolicitudesComponent  implements OnInit {
   async ngOnInit() {
     try {
       await this.misSolicitudes()
-      await this.obtenerTiposSolicitudes
+      await this.obtenerTiposSolicitudes()
     } catch (error) {
       console.log(error);
       

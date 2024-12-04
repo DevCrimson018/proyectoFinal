@@ -23,7 +23,7 @@
     @if(solicitudes.length > 0){
       <!-- Listado de solicitudes hechas -->
       <ion-row class="ion-justify-content-around">
-        <ion-col size="4" *ngFor="let solicitud of solicitudes">
+        <ion-col size="12" *ngFor="let solicitud of solicitudes">
           <ion-card>
             <ion-card-header>
               <ion-card-title>{{solicitud.tipo}}</ion-card-title>
@@ -49,16 +49,24 @@
   }@else {
 
     <!-- Este es el mini-formulario para crear solicitudes -->
-    
     <ion-row>
       <ion-col size="12">
         <ion-list>
           <h5>Formulario de Creación de Solicitudes</h5>
-          <ion-item>
-            <ion-select [(ngModel)]="tipoSolicitud" label="Tipo" placeholder="Tipo de Solicitud">
-              <ion-select-option *ngFor="let tipo of tiposSolicitudes" [value]="tipo.codigo">{{tipo.codigo}}</ion-select-option>
-            </ion-select>
-          </ion-item>
+            <ion-item>
+          <ion-select
+            [(ngModel)]="tipoSolicitud"
+            label="Tipo"
+            placeholder="Tipo de Solicitud"
+          >
+            <ion-select-option
+              *ngFor="let tipo of tiposSolicitudes"
+              [value]="tipo.codigo"
+            >
+              {{ tipo.descripcion }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
 
           <ion-item>
             <ion-textarea label="Descripcion:" placeholder="Escribe aquí la descripción..." [(ngModel)]="descripcionSolicitud"></ion-textarea>

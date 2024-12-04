@@ -129,14 +129,14 @@ export class ApiServiceService {
 
   crearSolicitud(tipo: string, descripcion: string) {
     return firstValueFrom(
-      this.http.post<any>(`${this.api}/crear_Solicitud`, {tipo, descripcion})
+      this.http.post<any>(`${this.api}/crear_solicitud`, {tipo, descripcion})
     )
   }
 
   cancelarSolicitud(id: number) {
     return firstValueFrom(
-      this.http.post<any>(`${this.api}/crear_Solicitud`, id)
-    )
+      this.http.delete<any>(`${this.api}/cancelar_solicitud/${id}`)
+    );
   }
 
 }

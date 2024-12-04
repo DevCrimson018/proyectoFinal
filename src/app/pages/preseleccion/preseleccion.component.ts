@@ -49,4 +49,11 @@ export class PreseleccionComponent  implements OnInit {
       this.verPreseleccion()
     })
   }
+
+  cambiarVista($event: any) {
+    console.log($event.detail.value);
+    this.verMiPreseleccion = $event.detail.value === 'true';
+    console.log(this.verMiPreseleccion);
+    
+  }
 }
