@@ -1,13 +1,7 @@
 ion-header {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    --background: #fff !important; 
-    --ion-background-color: #fff; 
-    padding: 0;
-    margin: 0;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    --background: #fff; 
+    --ion-background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 ion-segment {
@@ -39,14 +33,14 @@ ion-label {
 
 
 ion-toolbar {
+    display: flex;
     justify-content: center;
     align-items: center;
     --background: #fff !important; 
-    --ion-border-color: transparent;
+    --ion-border-color: transparent; 
     border: none !important;
-    height: 50px;
-    box-shadow: none !important;
-}
+    height: 60px;
+  }
 
 ion-title {
     color: #041865;
