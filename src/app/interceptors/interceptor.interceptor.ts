@@ -7,7 +7,8 @@ export const interceptorInterceptor: HttpInterceptorFn = (req, next) => {
   if(localStorage.getItem("user_token")){
     clonedReq = req.clone({
       setHeaders: {
-        Authorization: localStorage.getItem("user_token")!
+        "Authorization": localStorage.getItem("user_token")!,
+        "Content-Type": 'application/json'
       }
     })
   }

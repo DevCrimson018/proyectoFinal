@@ -24,10 +24,15 @@ export class LoginComponent  implements OnInit {
   async logIn() {
     try {
       this.apiService.login(this.username, this.password).then(res => {
-        console.log(res);
-        localStorage.setItem("user_token", res.data.authToken)
-        alert("Todo bn")
-        this.router.navigate(['tabs/menu'])
+
+        if(res.error != null){
+          alert(res.error)
+        }else{
+          localStorage.setItem("user_token", res.data.authToken)
+          alert("Bienvenido")
+          this.router.navigate(['tabs/menu'])
+        }
+
       })
     } catch (error) {
       alert(error)

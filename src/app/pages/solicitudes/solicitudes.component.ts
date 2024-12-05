@@ -11,7 +11,7 @@ export class SolicitudesComponent  implements OnInit {
   verMisSolicitudes:boolean = true
   tiposSolicitudes: any[] = []
 
-  solicitudes: any[] = []
+  solicitudes: any[] = [0]
 
   tipoSolicitud: string = ""
   descripcionSolicitud: string = ""
@@ -44,14 +44,21 @@ export class SolicitudesComponent  implements OnInit {
   }
 
   async crearSolicitud() {
+
     await this.apiService.crearSolicitud(this.tipoSolicitud, this.descripcionSolicitud).then(() => {
-      this.misSolicitudes()
+
+      this.misSolicitudes().then(() => {
+        alert("Solicitud Agregada")
+      })
     })
+      
   }
 
   async cancelarSolicitud(id: number) {
     await this.apiService.cancelarSolicitud(id).then(() => {
-      this.misSolicitudes()
+      this.misSolicitudes().then(() => {
+        alert("Solicitud Cancelada")
+      })
     })
   }
 

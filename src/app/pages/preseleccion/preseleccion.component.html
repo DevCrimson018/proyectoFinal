@@ -44,13 +44,14 @@
             <ion-item>
           <ion-select
             [(ngModel)]="codigoMateriaDisponible"
+            label="Materia"
             placeholder="Seleccionar Materia"
           >
             <ion-select-option
               *ngFor="let materia of materiasDisponibles"
               [value]="materia.codigo"
             >
-            {{ materia.codigo }}
+            {{ materia.nombre }}
             </ion-select-option>
           </ion-select>
         </ion-item>

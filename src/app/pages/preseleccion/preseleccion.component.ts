@@ -29,13 +29,17 @@ export class PreseleccionComponent  implements OnInit {
   async verPreseleccion() {
     this.apiService.verPreseleccion().then(res => {
       this.preselecciones = res.data
+      console.log(this.preselecciones);
+      
     })
   }
 
 
   obtenerMateriasDisponibles() {
     this.apiService.materiasDisponibles().then(res => {
-      this.materiasDisponibles = res.data
+      this.materiasDisponibles = res
+      console.log(res);
+      
     })
   }
   preSeleccionarMateria() {
@@ -45,6 +49,7 @@ export class PreseleccionComponent  implements OnInit {
   }
 
   cancelarPreseleccion(codigo: string) {
+    console.log(codigo);
     this.apiService.cancelarPreseleccionarMateria(codigo).then(() => {
       this.verPreseleccion()
     })

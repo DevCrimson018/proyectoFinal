@@ -98,14 +98,19 @@ export class ApiServiceService {
   }
 
   preseleccionarMateria(codigo: string) {
+    console.log(codigo);
+    
     return firstValueFrom(
+
       this.http.post<any>(`${this.api}/preseleccionar_materia`, codigo)
     )
   }
 
   cancelarPreseleccionarMateria(codigo: string) {
+    console.log(codigo);
+    
     return firstValueFrom(
-      this.http.post<any>(`${this.api}/cancelar_preseleccionar_materia`, codigo)
+      this.http.post<any>(`${this.api}/cancelar_preseleccion_materia`, codigo)
     )
   }
 
@@ -129,13 +134,13 @@ export class ApiServiceService {
 
   crearSolicitud(tipo: string, descripcion: string) {
     return firstValueFrom(
-      this.http.post<any>(`${this.api}/crear_solicitud`, {tipo, descripcion})
+      this.http.post<any>(`${this.api}/crear_solicitud`, {"tipo": tipo, "descripcion": descripcion})
     )
   }
 
   cancelarSolicitud(id: number) {
     return firstValueFrom(
-      this.http.delete<any>(`${this.api}/cancelar_solicitud/${id}`)
+      this.http.post<any>(`${this.api}/cancelar_solicitud/`, id)
     );
   }
 

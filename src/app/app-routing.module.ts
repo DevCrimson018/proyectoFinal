@@ -12,17 +12,17 @@ const routes: Routes = [
   {
     path: 'onboarding',
     loadChildren: () => import('./onboarding/onboarding.module').then(m => m.OnboardingModule),
-    //canActivate: [notSignedGuard]
+    canActivate: [notSignedGuard]
   },
   {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
-    //canActivate: [signedGuard]
+    canActivate: [signedGuard]
   },
   {
     path: 'pages',
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
-    //canActivate: [signedGuard]
+    canActivate: [signedGuard]
   },
   {
     path: '**',
